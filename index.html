@@ -10,63 +10,46 @@
   <link href="css/bootstrap-icons.css" rel="stylesheet">
   <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
   <style>
-    /* Hero Section Background */
-    #home {
-      background: url('images/hero-bg.jpg') no-repeat center center;
+    #homeCarousel .carousel-item {
+      height: 60vh;
       background-size: cover;
+      background-position: center;
       position: relative;
-      z-index: 1;
     }
-    #home::after {
+    #homeCarousel .carousel-item::after {
       content: "";
-      background: rgba(0, 0, 0, 0.5);
       position: absolute;
-      left: 0;
       top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
     }
-    .section-title {
-      margin-bottom: 30px;
-    }
-    .founder-img, .team-img, .program-img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .sub-section {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
+    .carousel-caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
     }
     .navbar {
-      background-color: #343a40 !important;
+      background-color: #222 !important;
     }
     .navbar-brand span {
-      color: #fff;
-      font-size: 1.1rem;
+      color: #ffc107;
+      font-size: 1.3rem;
+      font-weight: bold;
     }
     .navbar-nav .nav-link {
       color: #fff !important;
       font-weight: 600;
     }
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link:focus {
+    .navbar-nav .nav-link:hover {
       color: #ffc107 !important;
     }
-    .dropdown-menu {
-      background-color: #343a40;
-      border: none;
-    }
-    .dropdown-menu .dropdown-item {
-      color: #fff;
-    }
-    .dropdown-menu .dropdown-item:hover {
-      background-color: #495057;
-    }
-    /* Footer adjustments */
     .site-footer {
-      background-color: #212529;
+      background-color: #111;
       color: #ccc;
     }
     .site-footer a {
@@ -76,16 +59,84 @@
     .site-footer a:hover {
       color: #fff;
     }
-    .site-footer .footer-menu-link {
-      color: #ccc;
+    founder p{
+      color: #222 !important;
     }
-    .site-footer .footer-menu-link:hover {
+  body {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background-color: #f8f9fa;
+      line-height: 1.6;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ffc107;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    #homeCarousel .carousel-item {
+      height: 60vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    #homeCarousel .carousel-item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    #homeCarousel .carousel-caption {
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #homeCarousel .carousel-caption h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    #homeCarousel .carousel-caption p {
+      font-size: 1.25rem;
+      color: aqua;
+    }
+    .btn-warning {
+      background-color: #ffc107;
+      border-color: #ffc107;
+      color: #212529;
+      font-weight: bold;
+    }
+    .btn-warning:hover {
+      background-color: #e0a800;
+      border-color: #d39e00;
       color: #fff;
+    }
+    .sub-section {
+      padding: 40px 0;
+    }
+    img {
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .mb-4 {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    #get-involved .col-md-6 {
+      margin-bottom: 30px;
     }
   </style>
 </head>
-<body id="home">
-  <!-- Top Header -->
+<body>
   <header class="site-header">
     <div class="container">
       <div class="row">
@@ -99,492 +150,677 @@
             <a href="mailto:info@zulfatfoundation.org">info@zulfatfoundation.org</a>
           </p>
         </div>
-        <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
-          <ul class="social-icon list-inline mb-0">
-            <li class="list-inline-item">
-              <a href="#" class="text-white bi bi-twitter"></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white bi bi-facebook"></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white bi bi-instagram"></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white bi bi-youtube"></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white bi bi-whatsapp"></a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   </header>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+  <nav class="navbar navbar-expand-lg shadow-lg">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <span>
-          <span style="color: aquamarine;font-weight: bolder;">Zulfat Foundation</span><br>
-          <small style="color: aliceblue;">Empowering Lives &amp; Communities</small>
-        </span>
+        <span>Zulfat Foundation</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Main Navigation Menu with Dropdowns -->
-      <div class="collapse navbar-collapse" id="navbarNav">
+      
+      <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
+          <!-- Home -->
           <li class="nav-item">
-            <a class="nav-link click-scroll" href="#home">Home</a>
+            <a class="nav-link" href="#home">Home</a>
           </li>
+  
+          <!-- Our Founder Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link click-scroll dropdown-toggle" href="#founder" id="founderDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Founder</a>
+            <a class="nav-link dropdown-toggle" href="#founder" id="founderDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Our Founder
+            </a>
             <ul class="dropdown-menu" aria-labelledby="founderDropdown">
               <li><a class="dropdown-item" href="#founder-meet">Meet Our Founder</a></li>
-              <li><a class="dropdown-item" href="#founder-vision">Vision &amp; Mission</a></li>
-              <li><a class="dropdown-item" href="#founder-inspiration">Inspiration &amp; Journey</a></li>
-              <li><a class="dropdown-item" href="#founder-achievements">Celebrating Achievements</a></li>
-              <li><a class="dropdown-item" href="#founder-words">Words from the Founder</a></li>
+              <li><a class="dropdown-item" href="#founder-vision">Vision & Mission</a></li>
+              <li><a class="dropdown-item" href="#founder-inspiration">Inspiration & Journey</a></li>
+              <li><a class="dropdown-item" href="#founder-achievements">Achievements</a></li>
+              <li><a class="dropdown-item" href="#founder-words">Founder's Words</a></li>
               <li><a class="dropdown-item" href="#founder-media">Media Spotlights</a></li>
-              <li><a class="dropdown-item" href="#founder-contact">Get in Touch</a></li>
             </ul>
           </li>
+  
+          <!-- About Us Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link click-scroll dropdown-toggle" href="#about-us" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Who We Are</a>
+            <a class="nav-link dropdown-toggle" href="#about-us" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About Us
+            </a>
             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
               <li><a class="dropdown-item" href="#about-mission">Mission</a></li>
               <li><a class="dropdown-item" href="#about-vision">Vision</a></li>
               <li><a class="dropdown-item" href="#about-values">Values</a></li>
-              <li><a class="dropdown-item" href="#about-history">Our History</a></li>
-              <li><a class="dropdown-item" href="#about-team">Our Team</a></li>
+              <li><a class="dropdown-item" href="#about-history">History</a></li>
               <li><a class="dropdown-item" href="#about-impact">Community Impact</a></li>
-              <li><a class="dropdown-item" href="#about-partnerships">Partnerships &amp; Collaborations</a></li>
+              <li><a class="dropdown-item" href="#about-partnerships">Partnerships</a></li>
             </ul>
           </li>
+  
+          <!-- Our Work Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link click-scroll dropdown-toggle" href="#our-work" id="workDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Work</a>
+            <a class="nav-link dropdown-toggle" href="#our-work" id="workDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Our Work
+            </a>
             <ul class="dropdown-menu" aria-labelledby="workDropdown">
-              <li><a class="dropdown-item" href="#work-training">Training Programs</a></li>
-              <li><a class="dropdown-item" href="#work-scholarship">Scholarship Fund</a></li>
-              <li><a class="dropdown-item" href="#work-leadership">Leadership Workshops</a></li>
-              <li><a class="dropdown-item" href="#work-mentalhealth">Mental Health Initiatives</a></li>
-              <li><a class="dropdown-item" href="#work-career">Career Guidance Center</a></li>
+              <li><a class="dropdown-item" href="#work-training">Education & Training</a></li>
+              <li><a class="dropdown-item" href="#work-scholarship">Scholarships</a></li>
+              <li><a class="dropdown-item" href="#work-leadership">Leadership Programs</a></li>
+              <li><a class="dropdown-item" href="#work-mentalhealth">Mental Health</a></li>
+              <li><a class="dropdown-item" href="#work-career">Career Guidance</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link click-scroll dropdown-toggle" href="#museum" id="museumDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Museum</a>
-            <ul class="dropdown-menu" aria-labelledby="museumDropdown">
-              <li><a class="dropdown-item" href="#museum-events">Empowerment Events</a></li>
-              <li><a class="dropdown-item" href="#museum-stories">Scholarship Success Stories</a></li>
-              <li><a class="dropdown-item" href="#museum-workshops">Leadership Workshop Experiences</a></li>
-              <li><a class="dropdown-item" href="#museum-mentalhealth">Mental Health Advocacy</a></li>
-              <li><a class="dropdown-item" href="#museum-career">Career Guidance Highlights</a></li>
-              <li><a class="dropdown-item" href="#museum-impact">Community Impact</a></li>
-            </ul>
+  
+          <!-- Museum -->
+          <li class="nav-item">
+            <a class="nav-link" href="#museum">Museum</a>
           </li>
+  
+          <!-- Media Center -->
           <li class="nav-item dropdown">
-            <a class="nav-link click-scroll dropdown-toggle" href="#media-center" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Media Center</a>
+            <a class="nav-link dropdown-toggle" href="#media-center" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Media Center
+            </a>
             <ul class="dropdown-menu" aria-labelledby="mediaDropdown">
               <li><a class="dropdown-item" href="#media-press">Press Releases</a></li>
               <li><a class="dropdown-item" href="#media-coverage">Media Coverage</a></li>
               <li><a class="dropdown-item" href="#media-events">Event Highlights</a></li>
-              <li><a class="dropdown-item" href="#media-gallery">Multimedia Gallery</a></li>
-              <li><a class="dropdown-item" href="#media-publications">Publications</a></li>
+              <li><a class="dropdown-item" href="#media-gallery">Multimedia</a></li>
               <li><a class="dropdown-item" href="#media-testimonials">Testimonials</a></li>
-              <li><a class="dropdown-item" href="#media-contact">Contact Media Relations</a></li>
             </ul>
           </li>
+  
+          <!-- Get Involved Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link click-scroll dropdown-toggle" href="#our-impact" id="impactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Impact</a>
-            <ul class="dropdown-menu" aria-labelledby="impactDropdown">
-              <li><a class="dropdown-item" href="#impact-training">Empowering Youth through Training</a></li>
-              <li><a class="dropdown-item" href="#impact-scholarship">Scholarship Opportunities</a></li>
-              <li><a class="dropdown-item" href="#impact-leadership">Leadership Workshops</a></li>
-              <li><a class="dropdown-item" href="#impact-mentalhealth">Mental Health &amp; Well-Being</a></li>
-              <li><a class="dropdown-item" href="#impact-career">Career Guidance</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link click-scroll dropdown-toggle" href="#get-involved" id="involvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Get Involved</a>
+            <a class="nav-link dropdown-toggle" href="#get-involved" id="involvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Get Involved
+            </a>
             <ul class="dropdown-menu" aria-labelledby="involvedDropdown">
-              <li><a class="dropdown-item" href="#involved-volunteer">Volunteer Opportunities</a></li>
-              <li><a class="dropdown-item" href="#involved-donations">Donations &amp; Support</a></li>
-              <li><a class="dropdown-item" href="#involved-partnerships">Partnerships &amp; Collaborations</a></li>
-              <li><a class="dropdown-item" href="#involved-events">Events &amp; Workshops</a></li>
-              <li><a class="dropdown-item" href="#involved-advocacy">Advocacy &amp; Awareness</a></li>
+              <li><a class="dropdown-item" href="#involved-volunteer">Volunteer</a></li>
+              <li><a class="dropdown-item" href="#involved-donations">Donate</a></li>
+              <li><a class="dropdown-item" href="#involved-partnerships">Partnerships</a></li>
+              <li><a class="dropdown-item" href="#involved-events">Events</a></li>
+              <li><a class="dropdown-item" href="#involved-advocacy">Advocacy</a></li>
             </ul>
           </li>
+  
+          <!-- Contact Us -->
           <li class="nav-item">
-            <a class="nav-link click-scroll" href="#contact-us">Contact Us</a>
-          </li>
-          <li class="nav-item ms-3">
-            <a class="nav-link custom-btn custom-border-btn btn" href="donate.html">Donate</a>
+            <a class="nav-link" href="#contact-us">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <!-- Main Content Sections -->
   <main>
-    <!-- Home / Hero Section -->
-    <section id="home" class="py-5 text-white text-center">
-      <div class="container">
-        <h1 class="display-4">Welcome to Zulfat Foundation</h1>
-        <p class="lead">Empowering lives through education, vocational training, and economic empowerment.</p>
-        <a href="#about-us" class="btn btn-light btn-lg">Learn More</a>
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image: url('images/bg1.jpeg');">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 p-4">
+            <h1 class="display-3 text-white">Welcome to <b>Zulfat Foundation</b></h1>
+            <p class="lead text-white">Empowering lives through education, vocational training, and economic empowerment.</p>
+            <a href="#about-us" class="btn btn-warning btn-lg mt-3">Learn More</a>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('images/bg2.jpeg');">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 p-4">
+            <h1 class="display-3 text-white">Transforming Communities</h1>
+            <p class="lead text-white">We believe in the power of education and skill-building.</p>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('images/bg3.jpeg');">
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50 p-4">
+            <h1 class="display-3 text-white">Creating Opportunities</h1>
+            <p class="lead text-white">Join us in making a difference.</p>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <!-- Our Founder Section -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
     <section id="founder" class="py-5">
       <div class="container">
         <h2 class="section-title">Our Founder</h2>
-        <!-- Meet Our Founder -->
         <div id="founder-meet" class="sub-section row align-items-center">
           <div class="col-md-6">
-            <h3>Meet Madam Zulfat Mukarubega</h3>
-            <p style="color:white">
-              A visionary leader, genocide survivor, and champion for youth, women, and people with disabilities. She turned personal struggles into a mission to uplift others, believing one opportunity can change a life, a family, and a community.
-            </p>
+            <h3>Meet Madam <b>Zulfat Mukarubega</b></h3>
+            <p>Madam Zulfat Mukarubega is a visionary leader, genocide survivor, and a trailblazer for social change. With unwavering determination and compassion, she has dedicated her life to uplifting marginalized communities, empowering youth, women, and people with disabilities.</p>
+            <p>Her early experiences in the aftermath of the 1994 Genocide instilled in her a profound understanding of the hardships faced by the vulnerable. This painful past fueled her passion for education and opportunity—believing that every individual holds untapped potential waiting to be realized.</p>
+            <p>Through her hands-on approach, she has been instrumental in rebuilding communities, establishing local initiatives, and mentoring emerging leaders. Her commitment is reflected in every project, as she works tirelessly to create pathways for sustainable development and hope.</p>
           </div>
           <div class="col-md-6">
-            <img src="images/mukarubega.jpg" alt="Madam Zulfat Mukarubega" class="founder-img img-fluid">
+            <img src="images/mukarubega.jpg" alt="Madam Zulfat Mukarubega" class="img-fluid">
           </div>
         </div>
-        <!-- Vision & Mission -->
         <div id="founder-vision" class="sub-section">
           <h3>Vision &amp; Mission</h3>
-          <p style="color:white">
-            <strong>Mission:</strong> To break the cycle of poverty by empowering disadvantaged youth, women, and people with disabilities through education, vocational training, and entrepreneurship.
-          </p>
-          <p style="color:white">
-            <strong>Vision:</strong> A Rwanda where every individual has the opportunity to achieve self-reliance and financial independence.
-          </p>
+          <p><strong>Mission:</strong> To break the cycle of poverty by empowering disadvantaged youth, women, and people with disabilities through comprehensive programs in education, vocational training, and entrepreneurship. Her mission is rooted in the belief that sustainable change starts by investing in people.</p>
+          <p><strong>Vision:</strong> A Rwanda where every individual is provided with the tools, support, and opportunities to achieve self-reliance and financial independence, fostering a community of dignity, inclusiveness, and lasting hope.</p>
+          <p>This dual approach ensures that our initiatives are not only addressing immediate needs but also paving the way for long-term, transformative change in communities across Rwanda.</p>
         </div>
-        <!-- Inspiration & Journey -->
         <div id="founder-inspiration" class="sub-section">
           <h3>Inspiration &amp; Journey</h3>
-          <p style="color:white">
-            Born from the need created by Rwanda’s 1994 Genocide, Madam Zulfat’s journey is one of resilience and transformation. Her personal experiences have inspired her to work relentlessly for those left without hope.
-          </p>
+          <p>Madam Zulfat’s journey is a testament to the strength of the human spirit. Rising from the depths of tragedy, she transformed her pain into a powerful drive for community development and social justice. Her path is illuminated by countless stories of resilience and recovery from those she has helped.</p>
+          <p>Traveling extensively across Rwanda, she listens to community voices and integrates their needs into innovative programs. Her personal experiences have guided her to develop strategies that not only address immediate challenges but also lay the groundwork for long-term transformation.</p>
+          <p>Her story continues to inspire new generations of leaders who see in her a role model for courage and perseverance.</p>
         </div>
-        <!-- Celebrating Achievements -->
         <div id="founder-achievements" class="sub-section">
           <h3>Celebrating Achievements</h3>
-          <p style="color:white">
-            Under her leadership, over 387 students have been sponsored for education, 145 individuals placed in international jobs, and hundreds of local jobs created through vocational training.
-          </p>
+          <p>Under Madam Zulfat's dynamic leadership, the foundation has reached remarkable milestones. Over 387 students have been sponsored for education, opening doors to brighter futures, while 145 individuals have secured international job placements in competitive markets like the UAE and Qatar.</p>
+          <p>The foundation has also successfully generated hundreds of local jobs through tailored vocational training programs, each achievement reinforcing her vision of a more empowered and self-sustaining community.</p>
+          <ul>
+            <li>Establishment of community learning centers across several districts.</li>
+            <li>Launch of vocational hubs that provide market-ready skills.</li>
+            <li>International collaborations that create global job opportunities.</li>
+            <li>Ongoing mentorship initiatives that nurture the next generation of leaders.</li>
+          </ul>
         </div>
-        <!-- Words from the Founder -->
         <div id="founder-words" class="sub-section">
           <h3>Words from the Founder</h3>
-          <p style="color:white">
-            "Every act of kindness creates a ripple effect. I believe that by empowering one person, we uplift an entire community."
-          </p>
+          <p>"Every act of kindness creates a ripple effect. I believe that by empowering one person, we uplift an entire community. Our work is not just about providing opportunities, but also about nurturing hope and resilience in every heart we touch."</p>
+          <p>Her heartfelt words continue to inspire not only those within the foundation but also countless individuals and communities far beyond Rwanda's borders. They remind us that every contribution, however small, has the power to drive monumental change.</p>
         </div>
-        <!-- Media Spotlights & Get in Touch -->
         <div id="founder-media" class="sub-section">
           <h3>Media Spotlights</h3>
-          <p style="color:white">
-            Featured in various media channels for her extraordinary leadership and commitment to social change.
-          </p>
+          <p>Madam Zulfat has been featured in numerous national and international media channels for her extraordinary leadership and unwavering commitment to social change. Her inspiring journey has attracted the attention of policymakers, philanthropists, and community leaders alike.</p>
+          <p>These media features have played a crucial role in amplifying our message, bringing global awareness to local challenges, and mobilizing support for our initiatives.</p>
           <h3 id="founder-contact">Get in Touch</h3>
-          <p style="color:white">
-            For interviews, speaking engagements, or media inquiries, please contact our communications team.
-          </p>
+          <p>For interviews, speaking engagements, or media inquiries, please contact our communications team. We welcome the opportunity to share Madam Zulfat’s story and the impactful work of the foundation with a global audience.</p>
         </div>
       </div>
     </section>
-
+    
+    
     <!-- About Us Section -->
     <section id="about-us" class="py-5 bg-light">
       <div class="container">
         <h2 class="section-title">Who We Are</h2>
-        <!-- Mission & Vision -->
+        
+        <!-- Our Mission -->
         <div id="about-mission" class="sub-section">
           <h3>Our Mission</h3>
           <p>
-            To break the cycle of poverty by empowering disadvantaged communities through education, vocational training, and entrepreneurship.
+            To break the cycle of poverty by empowering disadvantaged communities through comprehensive education, vocational training, and entrepreneurship. We focus on building the skills and confidence needed for sustainable personal and community growth.
+          </p>
+          <p>
+            Our programs are designed to provide access to modern educational resources, state-of-the-art vocational training facilities, and innovative business incubation centers. By tailoring our approach to the unique needs of each community, we ensure that every individual receives the support necessary to succeed.
+          </p>
+          <ul>
+            <li><strong>Education:</strong> Scholarships, literacy programs, and digital skills workshops.</li>
+            <li><strong>Vocational Training:</strong> Hands-on skill development in trades and technology.</li>
+            <li><strong>Entrepreneurship:</strong> Business start-up mentoring and microfinance opportunities.</li>
+          </ul>
+          <p>
+            Our mission is not just about providing resources—it’s about inspiring hope, building self-esteem, and igniting a passion for lifelong learning.
           </p>
         </div>
+        
+        <!-- Our Vision -->
         <div id="about-vision" class="sub-section">
           <h3>Our Vision</h3>
           <p>
-            A Rwanda where every individual can achieve self-reliance and financial independence.
+            We envision a Rwanda where every individual is given the opportunity to achieve self-reliance and financial independence. Our goal is a future where education and innovation create a ripple effect that transforms entire communities.
+          </p>
+          <p>
+            We see a society where barriers to success are eliminated and where collaboration and community spirit drive development. This vision is supported by our commitment to inclusivity and continuous improvement in all our initiatives.
+          </p>
+          <p>
+            Through strategic investments in people and technology, we aim to cultivate an environment where creativity, critical thinking, and resilience are at the core of progress.
           </p>
         </div>
-        <!-- Values & History -->
+        
+        <!-- Our Values -->
         <div id="about-values" class="sub-section">
           <h3>Our Values</h3>
           <p>
-            Integrity, compassion, resilience, and empowerment guide every initiative we undertake.
+            Our work is grounded in the principles that shape everything we do. We are committed to:
+          </p>
+          <ul>
+            <li><strong>Integrity:</strong> Upholding the highest standards of transparency and accountability in all our actions.</li>
+            <li><strong>Compassion:</strong> Demonstrating empathy and understanding towards the challenges faced by the communities we serve.</li>
+            <li><strong>Resilience:</strong> Fostering a spirit of perseverance and adaptability in the face of adversity.</li>
+            <li><strong>Empowerment:</strong> Enabling individuals to take control of their future through skill development and self-confidence.</li>
+          </ul>
+          <p>
+            These values are not just words on paper—they guide our day-to-day operations and our long-term strategies, ensuring that every project we undertake reflects our commitment to social justice and community welfare.
           </p>
         </div>
+        
+        <!-- Our History -->
         <div id="about-history" class="sub-section">
           <h3>Our History</h3>
           <p>
-            Born out of the devastation of the 1994 Genocide, Zulfat Foundation was founded in 2008 to provide dignity and opportunity for those left behind.
+            Born out of the devastation of the 1994 Genocide, Zulfat Foundation was founded in 2008 with a mission to restore dignity and opportunity to those who had been forgotten. Our humble beginnings as a grassroots initiative have evolved into a respected organization that serves hundreds of communities across Rwanda.
+          </p>
+          <p>
+            Over the years, we have celebrated numerous milestones:
+          </p>
+          <ul>
+            <li>Establishment of our first community learning center in 2009.</li>
+            <li>Launch of vocational training programs in 2011, which have since trained over 500 individuals.</li>
+            <li>Expansion of our scholarship fund in 2013, enabling access to higher education for hundreds of students.</li>
+            <li>Partnerships with international organizations starting in 2015, expanding our reach and resources.</li>
+          </ul>
+          <p>
+            Our history is a testament to the strength and resilience of the Rwandan people, and it continues to inspire us to push the boundaries of what is possible.
           </p>
         </div>
-        <!-- Team & Community Impact -->
-        <div id="about-team" class="sub-section row">
-          <div class="col-md-6">
-            <h3>Our Team</h3>
-            <p>
-              A passionate group of professionals dedicated to transforming lives.
-            </p>
-          </div>
-          <div class="col-md-6">
-            <img src="images/team.jpg" alt="Our Team" class="team-img img-fluid">
-          </div>
-        </div>
+        
+        <!-- Community Impact -->
         <div id="about-impact" class="sub-section">
           <h3>Community Impact</h3>
           <p>
-            We have transformed hundreds of lives by creating local jobs and supporting people with disabilities with essential needs, education, and mentorship.
+            Through our dedicated programs, we have transformed hundreds of lives by creating local job opportunities, enhancing access to quality education, and providing critical support to people with disabilities. Our efforts have empowered individuals to break free from the cycle of poverty and achieve lasting success.
+          </p>
+          <p>
+            Some highlights of our community impact include:
+          </p>
+          <ul>
+            <li>Empowering over 387 students with scholarships and educational resources.</li>
+            <li>Facilitating international job placements for 145 individuals.</li>
+            <li>Creating hundreds of local job opportunities through targeted vocational training.</li>
+            <li>Providing essential mentorship and healthcare support to 184 people with disabilities.</li>
+          </ul>
+          <p>
+            Each success story reinforces our belief in the transformative power of community-driven change and the importance of investing in human potential.
           </p>
         </div>
+        
+        <!-- Partnerships & Collaborations -->
         <div id="about-partnerships" class="sub-section">
           <h3>Partnerships &amp; Collaborations</h3>
           <p>
-            In collaboration with UTB and other strategic partners, we provide professional training and employment opportunities.
+            We believe that sustainable change is achieved through collaboration. By partnering with UTB and other strategic allies, we leverage combined expertise and resources to maximize our impact. These collaborations enable us to launch innovative programs, extend our reach, and share best practices for community development.
+          </p>
+          <p>
+            Our partnerships are built on mutual respect, shared goals, and a commitment to creating tangible results. Together, we work to:
+          </p>
+          <ul>
+            <li>Develop cutting-edge training modules and curricula.</li>
+            <li>Secure funding and resources for large-scale projects.</li>
+            <li>Facilitate knowledge exchange through workshops and seminars.</li>
+            <li>Advocate for policy changes that support community empowerment.</li>
+          </ul>
+          <p>
+            These collaborative efforts not only strengthen our programs but also contribute to a broader movement towards inclusive and sustainable development.
           </p>
         </div>
+        
       </div>
     </section>
-
+    
     <!-- Our Work Section -->
     <section id="our-work" class="py-5">
       <div class="container">
         <h2 class="section-title">Our Work</h2>
         <div class="row">
+          <!-- Education & Vocational Training -->
           <div class="col-md-6 mb-4" id="work-training">
-            <img src="images/program-edu.jpg" alt="Training Programs" class="program-img img-fluid">
-            <h5>Education &amp; Vocational Training</h5>
-            <p style="color: white;">Scholarships and skills training for a brighter future.</p>
+            <center>
+              <img src="images/vocation-training.jpg" style="width: 50%;height: 50%;" alt="Training Programs" class="img-fluid">
+            </center>
+            <h5 class="mt-3">Education &amp; Vocational Training</h5>
+            <p>
+              Our education programs provide scholarships and vocational training that empower individuals with both theoretical knowledge and practical skills. We offer modern curricula, hands-on workshops, and access to state-of-the-art facilities.
+            </p>
+            <p>
+              Participants gain the confidence and competence needed to pursue higher education and professional careers, transforming their lives and communities.
+            </p>
           </div>
+          <!-- Job Creation & Entrepreneurship -->
           <div class="col-md-6 mb-4" id="work-scholarship">
-            <img src="images/program-job.jpg" alt="Scholarship Fund" class="program-img img-fluid">
-            <h5>Job Creation &amp; Entrepreneurship</h5>
-            <p style="color: white;">Helping youth and women launch businesses or secure employment.</p>
+            <center>
+            <img src="images/job-creation.jpg" style="width: 50%;height: 50%;" alt="Scholarship Fund" class="img-fluid">
+          </center>
+            
+            <h5 class="mt-3">Job Creation &amp; Entrepreneurship</h5>
+            <p>
+              We support aspiring entrepreneurs and job seekers by offering tailored mentorship, micro-finance opportunities, and practical business training. Our programs bridge the gap between academic learning and real-world application.
+            </p>
+            <p>
+              This approach not only helps individuals launch and grow their businesses but also contributes to the creation of sustainable local employment.
+            </p>
           </div>
+          <!-- Support for People with Disabilities -->
           <div class="col-md-6 mb-4" id="work-leadership">
-            <img src="images/program-disability.jpg" alt="Leadership Workshops" class="program-img img-fluid">
-            <h5>Support for People with Disabilities</h5>
-            <p style="color: white;">Providing food, healthcare, education, and advocacy.</p>
+            <center>
+            <img src="images/disabilities.png" style="width: 50%;height: 50%;" alt="Leadership Workshops" class="img-fluid">
+          </center>
+            
+            <h5 class="mt-3">Support for People with Disabilities</h5>
+            <p>
+              Our initiatives for people with disabilities include access to essential services such as healthcare, tailored education, and specialized vocational training. We work diligently to create an inclusive environment where everyone can thrive.
+            </p>
+            <p>
+              By removing barriers and promoting adaptive learning, we help each individual achieve independence and contribute meaningfully to society.
+            </p>
           </div>
+          <!-- Women’s Empowerment -->
           <div class="col-md-6 mb-4" id="work-mentalhealth">
-            <img src="images/program-women.jpg" alt="Women’s Empowerment" class="program-img img-fluid">
-            <h5>Women’s Empowerment</h5>
-            <p style="color: white;">A dedicated center for training, mentorship, and health through sports.</p>
+            <center>
+            <img src="images/women.jpeg" style="width: 50%;height: 50%;" alt="Women’s Empowerment" class="img-fluid">
+          </center>
+            
+            <h5 class="mt-3">Women’s Empowerment</h5>
+            <p>
+              Our Women’s Empowerment center focuses on leadership development, personal growth, and health through sports and wellness programs. We offer training sessions, mentorship opportunities, and networking events to foster self-confidence and independence.
+            </p>
+            <p>
+              This dedicated approach empowers women to take on leadership roles and become influential agents of change within their communities.
+            </p>
           </div>
+          <!-- Career Guidance Center -->
           <div class="col-md-12 mb-4" id="work-career">
             <h5>Career Guidance Center</h5>
-            <p style="color: white;">Providing expert advice and career development opportunities.</p>
+            <p>
+              Our Career Guidance Center provides personalized counseling, professional development workshops, and job placement services designed to prepare individuals for successful careers. We offer continuous support, from resume building to interview preparation, ensuring that every participant is job-ready.
+            </p>
+            <p>
+              Through partnerships with local businesses and international organizations, we create real-world opportunities that help bridge the gap between education and employment.
+            </p>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- Museum Section -->
     <section id="museum" class="py-5 bg-light">
       <div class="container">
         <h2 class="section-title">Museum</h2>
         <div class="row">
+          <!-- Empowerment Events -->
           <div class="col-md-4 mb-4" id="museum-events">
             <h5>Empowerment Events</h5>
-            <p>Highlights of our community and empowerment events.</p>
+            <p>
+              Our museum celebrates the transformative power of community through annual empowerment events. These gatherings bring together local leaders, inspiring speakers, and passionate community members to share success stories and milestones.
+            </p>
+            <p>
+              Visitors can relive memorable moments through interactive exhibits and multimedia displays that capture the spirit of collaboration and growth.
+            </p>
           </div>
+          <!-- Scholarship Success Stories -->
           <div class="col-md-4 mb-4" id="museum-stories">
             <h5>Scholarship Success Stories</h5>
-            <p>Inspiring stories of lives transformed through education.</p>
+            <p>
+              Explore inspiring stories of individuals whose lives have been transformed through our scholarship programs. Our exhibits feature personal testimonials, before-and-after narratives, and video interviews.
+            </p>
+            <p>
+              Interactive kiosks allow visitors to dive deep into each journey, celebrating academic achievements and the lasting impact of education.
+            </p>
           </div>
+          <!-- Leadership Workshop Experiences -->
           <div class="col-md-4 mb-4" id="museum-workshops">
             <h5>Leadership Workshop Experiences</h5>
-            <p>Memorable moments from our leadership workshops.</p>
+            <p>
+              Relive the dynamic energy of our leadership workshops through photo galleries, video highlights, and participant testimonials. These exhibits capture the collaborative spirit and practical skills developed during our sessions.
+            </p>
+            <p>
+              Visitors can engage with interactive displays that outline the key strategies and outcomes from these transformative workshops.
+            </p>
           </div>
+          <!-- Mental Health Advocacy -->
           <div class="col-md-4 mb-4" id="museum-mentalhealth">
             <h5>Mental Health Advocacy</h5>
-            <p>Initiatives promoting mental health and well-being.</p>
+            <p>
+              Our mental health advocacy exhibit offers a comprehensive look at initiatives designed to promote well-being. Learn about programs aimed at reducing stigma, providing essential support, and fostering a culture of care.
+            </p>
+            <p>
+              Through personal stories, art installations, and data visualizations, visitors gain insight into the crucial role mental health plays in community empowerment.
+            </p>
           </div>
+          <!-- Career Guidance Highlights -->
           <div class="col-md-4 mb-4" id="museum-career">
             <h5>Career Guidance Highlights</h5>
-            <p>Success stories from our career guidance initiatives.</p>
+            <p>
+              This section showcases the transformative power of our career guidance programs. Visitors can view success stories, interactive timelines, and real-world outcomes of professional mentoring and job placement initiatives.
+            </p>
+            <p>
+              The exhibits highlight how targeted career advice has opened doors for many, paving the way for financial independence and personal growth.
+            </p>
           </div>
+          <!-- Community Impact -->
           <div class="col-md-4 mb-4" id="museum-impact">
             <h5>Community Impact</h5>
-            <p>Our museum exhibits showcase the overall impact in the community.</p>
+            <p>
+              Our community impact exhibit integrates data, personal testimonials, and interactive maps to present a comprehensive view of our foundation's reach. See how our initiatives have created local jobs, supported education, and built stronger communities.
+            </p>
+            <p>
+              This immersive experience illustrates the cumulative effect of our work, showing visitors the tangible changes that have uplifted entire neighborhoods.
+            </p>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- Media Center Section -->
     <section id="media-center" class="py-5">
       <div class="container">
         <h2 class="section-title">Media Center</h2>
         <div class="row">
+          <!-- Press Releases -->
           <div class="col-md-4 mb-4" id="media-press">
             <h5>Press Releases</h5>
-            <p style="color: white;">Latest announcements and press releases.</p>
+            <p>Stay informed with our latest announcements and press releases. We share updates on new initiatives, strategic partnerships, and upcoming events, ensuring our community and stakeholders are always in the loop.</p>
+            <p>Our press releases are distributed through trusted media channels, emphasizing transparency and timely communication.</p>
           </div>
+          <!-- Media Coverage -->
           <div class="col-md-4 mb-4" id="media-coverage">
             <h5>Media Coverage</h5>
-            <p style="color: white;">Featured articles and media mentions.</p>
+            <p>Discover featured articles, interviews, and news stories from leading media outlets. Our media coverage showcases the impact of our programs and highlights the inspirational stories of those we serve.</p>
+            <p>These features help to amplify our message and build a broader network of support.</p>
           </div>
+          <!-- Event Highlights -->
           <div class="col-md-4 mb-4" id="media-events">
             <h5>Event Highlights</h5>
-            <p style="color: white;">Snapshots from our events and gatherings.</p>
+            <p>Relive the energy of our community gatherings with snapshots and detailed recaps from our events. These highlights capture the passion, collaboration, and success of our empowerment initiatives.</p>
+            <p>Experience the vibrancy of our events through photo essays and video summaries.</p>
           </div>
+          <!-- Multimedia Gallery -->
           <div class="col-md-4 mb-4" id="media-gallery">
             <h5>Multimedia Gallery</h5>
-            <p style="color: white;">Photos and videos capturing our journey.</p>
+            <p>Explore a curated collection of photos and videos that document our journey. From behind-the-scenes footage to professionally produced features, our gallery offers an immersive look at our projects and community impact.</p>
+            <p>Engage with interactive displays that bring our story to life.</p>
           </div>
+          <!-- Publications -->
           <div class="col-md-4 mb-4" id="media-publications">
             <h5>Publications</h5>
-            <p style="color: white;">Reports, brochures, and other publications.</p>
+            <p>Access our in-depth reports, brochures, and research publications that detail our projects, methodologies, and achievements. These documents provide valuable insights into our strategies and long-term impact.</p>
+            <p>They are available for download and offer a comprehensive look at our work.</p>
           </div>
+          <!-- Testimonials -->
           <div class="col-md-4 mb-4" id="media-testimonials">
             <h5>Testimonials</h5>
-            <p style="color: white;">Stories from those whose lives we have touched.</p>
+            <p>Read personal stories and testimonials from individuals whose lives have been transformed by our initiatives. These narratives highlight the human side of our work and the enduring impact on the community.</p>
+            <p>The testimonials serve as powerful reminders of the positive change we create together.</p>
           </div>
+          <!-- Contact Media Relations -->
           <div class="col-md-12 mb-4" id="media-contact">
             <h5>Contact Media Relations</h5>
-            <p style="color: white;">Get in touch for media inquiries and collaborations.</p>
+            <p>If you have media inquiries or wish to collaborate with us, please get in touch with our dedicated media relations team. We are committed to fostering transparent and engaging communication with our partners and the press.</p>
+            <p>For more information, reach out via email or phone, and follow us on social media for the latest updates.</p>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- Our Impact Section -->
     <section id="our-impact" class="py-5 bg-light">
       <div class="container">
         <h2 class="section-title">Our Impact</h2>
+        <p>Through our dedicated programs and initiatives, we have transformed lives and created lasting change in communities. Our impact is measured by the opportunities we provide, the skills we nurture, and the hope we restore.</p>
         <div class="row">
           <div class="col-md-4 mb-4" id="impact-training">
             <h5>Empowering Youth through Training Programs</h5>
-            <p>Over 387 students sponsored for education.</p>
+            <p>Over <strong>387 students</strong> have been sponsored for education, equipping them with knowledge and skills for a brighter future.</p>
           </div>
           <div class="col-md-4 mb-4" id="impact-scholarship">
-            <h5>Scholarship Fund</h5>
-            <p>145 placed in international jobs (UAE &amp; Qatar).</p>
+            <h5>Scholarship & International Job Placements</h5>
+            <p>Through our career programs, <strong>145 individuals</strong> have secured jobs in international markets such as the <strong>UAE & Qatar</strong>, paving the way for financial independence.</p>
           </div>
           <div class="col-md-4 mb-4" id="impact-leadership">
-            <h5>Leadership Workshops</h5>
-            <p>Hundreds of local jobs created through vocational training.</p>
+            <h5>Leadership & Vocational Training</h5>
+            <p>Our leadership and vocational training programs have successfully created <strong>hundreds of local jobs</strong>, fostering self-reliance and economic growth.</p>
           </div>
           <div class="col-md-4 mb-4" id="impact-mentalhealth">
-            <h5>Mental Health &amp; Well-Being</h5>
-            <p>184 people with disabilities supported with essential needs, education, and mentorship.</p>
+            <h5>Mental Health & Well-Being</h5>
+            <p>We have supported <strong>184 people with disabilities</strong> by providing essential needs, education, and mentorship, ensuring inclusivity and dignity for all.</p>
           </div>
           <div class="col-md-4 mb-4" id="impact-career">
-            <h5>Career Guidance</h5>
-            <p>Professional training and employment opportunities via UTB partnership.</p>
+            <h5>Career Development & Professional Training</h5>
+            <p>In collaboration with <strong>UTB</strong> and other partners, we have provided professional training, mentorship, and employment opportunities to equip individuals with marketable skills.</p>
           </div>
         </div>
+        <p class="mt-4 text-center"><strong>Every success story fuels our mission to build a Rwanda where opportunity and dignity are accessible to all.</strong></p>
       </div>
     </section>
-
+    
     <!-- Get Involved Section -->
     <section id="get-involved" class="py-5">
       <div class="container">
         <h2 class="section-title">Get Involved</h2>
         <div class="row">
+          <!-- Volunteer Opportunities -->
           <div class="col-md-4 mb-4" id="involved-volunteer">
             <h5>Volunteer Opportunities</h5>
-            <p style="color: white;">Join our mission and share your expertise to inspire the next generation.</p>
+            <p>
+              Join our mission by volunteering your time, skills, and passion. Whether you’re a professional, student, or community enthusiast, there’s a role for you.
+            </p>
+            <p>
+              Volunteer roles include mentoring, event organization, community outreach, and technical support. Your involvement can directly help empower the next generation.
+            </p>
           </div>
+          <!-- Donations & Support -->
           <div class="col-md-4 mb-4" id="involved-donations">
             <h5>Donations &amp; Support</h5>
-            <p style="color: white;">Your donation can send a student to school and create employment opportunities.</p>
+            <p>
+              Your donation can make a real difference. Every contribution helps send a student to school, funds critical training programs, and creates job opportunities.
+            </p>
+            <p>
+              We welcome monetary gifts, in-kind donations, and corporate sponsorships. Partner with us to transform lives and foster community growth.
+            </p>
           </div>
+          <!-- Partnerships & Collaborations -->
           <div class="col-md-4 mb-4" id="involved-partnerships">
             <h5>Partnerships &amp; Collaborations</h5>
-            <p style="color: white;">Collaborate with us to create jobs and training opportunities.</p>
+            <p>
+              We believe in the power of collaboration. Partner with us to leverage shared expertise and resources in creating sustainable development initiatives.
+            </p>
+            <p>
+              Our partners include local businesses, academic institutions, NGOs, and government bodies, all working together to create lasting impact.
+            </p>
           </div>
+          <!-- Events & Workshops -->
           <div class="col-md-6 mb-4" id="involved-events">
             <h5>Events &amp; Workshops</h5>
-            <p style="color: white;">Participate in our events and workshops to drive community transformation.</p>
+            <p>
+              Participate in our dynamic events and workshops designed to educate, inspire, and connect. From leadership seminars to skill-building sessions, our events offer a platform for networking and growth.
+            </p>
+            <p>
+              These gatherings provide opportunities to learn from experts, share ideas, and drive community transformation.
+            </p>
           </div>
+          <!-- Advocacy & Awareness -->
           <div class="col-md-6 mb-4" id="involved-advocacy">
             <h5>Advocacy &amp; Awareness</h5>
-            <p style="color: white;">Help spread the word about our mission and advocate for change.</p>
+            <p>
+              Help spread the word about our mission and advocate for change. Engage in our campaigns, share our story on social media, and join our efforts to influence policy and public opinion.
+            </p>
+            <p>
+              Your voice is powerful. By raising awareness, you can help shape a future where opportunity and empowerment are within everyone’s reach.
+            </p>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- Contact Us Section -->
     <section id="contact-us" class="py-5">
       <div class="container">
         <h2 class="section-title">Contact Us</h2>
-        <p style="color: white;">For more information or to get involved, please reach out to us.</p>
+        <p>We would love to hear from you! Whether you have questions about our programs, need assistance, or want to explore collaboration opportunities, please don’t hesitate to get in touch.</p>
+        <p>Our dedicated team is here to provide you with the information and support you need. We strive to respond to all inquiries promptly and ensure that your experience with us is both informative and engaging.</p>
+        <p>You can reach us by email, phone, or simply by filling out our contact form. Your feedback and inquiries are important to us as we work together to create a brighter future for our community.</p>
         <a href="contact.html" class="btn btn-primary">Contact Form</a>
       </div>
     </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-12 mb-4">
-          <img src="images/mukarubega.jpg" class="img-fluid" alt="Zulfat Foundation Logo">
-        </div>
-        <div class="col-lg-4 col-md-6 col-12 mb-4">
-          <h5 class="site-footer-title mb-3">Quick Links</h5>
-          <ul class="footer-menu list-unstyled">
-            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Our Story</a></li>
-            <li class="footer-menu-item"><a href="#" class="footer-menu-link">News &amp; Events</a></li>
-            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Our Programs</a></li>
-            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Volunteer</a></li>
-            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Partner with Us</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12 mx-auto">
-          <h5 class="site-footer-title mb-3">Contact Information</h5>
-          <p class="text-white d-flex mb-2">
-            <i class="bi-telephone me-2"></i>
-            <a href="tel:+250788123456" class="site-footer-link">+250 788 302 737</a>
-          </p>
-          <p class="text-white d-flex">
-            <i class="bi-envelope me-2"></i>
-            <a href="mailto:info@zulfatfoundation.org" class="site-footer-link">info@zulfatfoundation.org</a>
-          </p>
-          <p class="text-white d-flex mt-3">
-            <i class="bi-geo-alt me-2"></i>
-            Kigali, Rwanda
-          </p>
-          <a href="#" class="custom-btn btn mt-3">Get Direction</a>
-        </div>
-      </div>
-    </div>
-    <div class="site-footer-bottom py-3 bg-secondary">
+    
+    <footer class="site-footer bg-dark text-white py-5">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-7 col-12">
-            <p class="mb-0" style="color: #ffc107;font-weight: bolder;">&copy; 2025 Zulfat Foundation</p>
+          <div class="col-lg-3 col-12 mb-4">
+            <img src="images/mukarubega.jpg" class="img-fluid" alt="Zulfat Foundation Logo">
           </div>
-          <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center">
-            <ul class="social-icon list-unstyled d-flex mb-0">
-              <li class="me-3"><a href="#" class="social-icon-link text-white bi bi-twitter"></a></li>
-              <li class="me-3"><a href="#" class="social-icon-link text-white bi bi-facebook"></a></li>
-              <li class="me-3"><a href="#" class="social-icon-link text-white bi bi-instagram"></a></li>
-              <li class="me-3"><a href="#" class="social-icon-link text-white bi bi-linkedin"></a></li>
-              <li><a href="#" class="social-icon-link text-white bi bi-youtube"></a></li>
+          <div class="col-lg-4 col-md-6 col-12 mx-auto">
+            <h5 class="site-footer-title mb-3">Quick Links</h5>
+            <ul class="footer-menu list-unstyled">
+              <li class="footer-menu-item"><a href="#" class="footer-menu-link text-white">Our Story</a></li>
+              <li class="footer-menu-item"><a href="#" class="footer-menu-link text-white">News & Events</a></li>
+              <li class="footer-menu-item"><a href="#" class="footer-menu-link text-white">Our Programs</a></li>
+              <li class="footer-menu-item"><a href="#" class="footer-menu-link text-white">Volunteer</a></li>
+              <li class="footer-menu-item"><a href="#" class="footer-menu-link text-white">Partner with Us</a></li>
             </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mx-auto">
+            <h5 class="site-footer-title mb-3">Contact Information</h5>
+            <p class="text-white d-flex mb-2">
+              <i class="bi-telephone me-2"></i>
+              <a href="tel:+250788123456" class="site-footer-link text-white">+250 788 302 737</a>
+            </p>
+            <p class="text-white d-flex mb-2">
+              <i class="bi-envelope me-2"></i>
+              <a href="mailto:info@zulfatfoundation.org" class="site-footer-link text-white">info@zulfatfoundation.org</a>
+            </p>
+            <p class="text-white d-flex mb-2">
+              <i class="bi-geo-alt me-2"></i>
+              Kigali, Rwanda
+            </p>
+            <a href="https://maps.app.goo.gl/fjFtS6K61aDN3ypw9" target="_blank" class="custom-btn btn btn-light mt-3">Get Directions</a>
+          </div>
+          <div class="col-lg-12 col-12 mt-12">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26507.21382361505!2d30.070568!3d-1.990246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwNTknMjQuOSJTIDMwwrAwNCcwMS40IkU!5e0!3m2!1sen!2srw!4v1700000000000" 
+              width="100%" 
+              height="250" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
+    
+      <div class="site-footer-bottom py-3 bg-secondary">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-7 col-12">
+              <p class="mb-0" style="color: #ffc107; font-weight: bolder;">&copy; 2025 Zulfat Foundation</p>
+            </div>
+            <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center">
+              <ul class="social-icon list-unstyled d-flex mb-0">
+                <li class="me-3"><a href="#" class="social-icon-link text-white bi bi-twitter" title="Twitter"></a></li>
+                <li class="me-3"><a href="#" class="social-icon-link text-white bi bi-facebook" title="Facebook"></a></li>
+                <li class="me-3"><a href="#" class="social-icon-link text-white bi bi-instagram" title="Instagram"></a></li>
+                <li class="me-3"><a href="#" class="social-icon-link text-white bi bi-linkedin" title="LinkedIn"></a></li>
+                <li><a href="#" class="social-icon-link text-white bi bi-youtube" title="YouTube"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+    
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
